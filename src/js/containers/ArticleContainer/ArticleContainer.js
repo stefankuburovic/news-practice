@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './ArticleContainer.scss';
-import getSearch from '../../queries/getNewsBySearchTerm';
-import { BsDot, IoMdArrowRoundBack, IoMdArrowRoundForward } from 'react-icons/all';
 import { FormattedMessage } from 'react-intl';
+import getSearch from '../../queries/getNewsBySearchTerm';
+import dummyImage from '../../../assets/images/jpg/news.jpg';
+import { BsDot, IoMdArrowRoundBack, IoMdArrowRoundForward } from 'react-icons/all';
 
 const ArticleContainer = ({ onClick, country, article }) => {
     const { data } = getSearch(country, article.title);
-    let { title, content, urlToImage, author, url } = data !== undefined && data.articles[0];
+    console.log(article.title, data);
+    let { title, content, urlToImage, author, url } =
+        (data !== undefined && data.articles.length > 0 && data.articles[0]) || '';
 
     return (
         <div className="article-container">
@@ -18,12 +21,14 @@ const ArticleContainer = ({ onClick, country, article }) => {
                         <span className="author">{author}</span>
                     </span>
                 </h2>
-                {urlToImage !== null && (
+                {urlToImage !== null ? (
                     <img src={urlToImage} alt={title} className="article-container_header-image" />
+                ) : (
+                    <img src={dummyImage} alt={title} className="article-container_header-image" />
                 )}
             </div>
             <div className="article-container_content">
-                <p>{content}</p>
+                <p dangerouslySetInnerHTML={{ __html: content }} />
             </div>
             <div className="article-container_footer">
                 <a href="#" onClick={() => onClick({})}>

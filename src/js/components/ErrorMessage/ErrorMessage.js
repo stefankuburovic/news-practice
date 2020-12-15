@@ -16,7 +16,4 @@ const ErrorMessage = () => {
     );
 };
 
-ErrorMessage.propTypes = {
-    status: PropTypes.string,
-};
 export default ErrorMessage;

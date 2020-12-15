@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { AiOutlineArrowRight } from 'react-icons/all';
+import dummyImage from '../../../assets/images/jpg/news.jpg';
 import './Card.scss';
 
 const Card = ({ title, urlToImage, onClick }) => {
-    console.log(title);
     return (
         <div className="card-item">
             <div className="card-item_description">
@@ -13,8 +13,10 @@ const Card = ({ title, urlToImage, onClick }) => {
                     <AiOutlineArrowRight color="white" />
                 </button>
             </div>
-            {urlToImage !== null && (
+            {urlToImage !== null ? (
                 <img src={urlToImage} alt={title} className="card-item_image" />
+            ) : (
+                <img src={dummyImage} alt={title} className="card-item_image" />
             )}
         </div>
     );

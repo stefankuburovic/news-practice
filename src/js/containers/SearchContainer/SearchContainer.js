@@ -3,16 +3,25 @@ import PropTypes from 'prop-types';
 import './SearchContainer.scss';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import CardContainer from '../CardContainer/CardContainer';
-import getSearch from '../../queries/getNewsBySearchTerm';
+import { useSelector } from 'react-redux';
 
 const SearchContainer = ({ country, onClick }) => {
     const [keyword, setKeyword] = useState('');
-    const { status, data } = getSearch(country, keyword);
-
+    const searchedHeadlines = useSelector((state) => state.getBySearchTerm);
+    const { loading, error, data } = searchedHeadlines;
+    console.log(loading, error, data);
     return (
         <div className="search-container">
-            <SearchBar setKeyword={setKeyword} />
-            {keyword.length > 3 && <CardContainer data={data} status={status} onClick={onClick} />}
+            <SearchBar country={country} setKeyword={setKeyword} />
+            {keyword.length > 3 && (
+                <CardContainer
+                    data={data}
+                    loading={loading}
+                    error={error}
+                    status={status}
+                    onClick={onClick}
+                />
+            )}
         </div>
     );
 };

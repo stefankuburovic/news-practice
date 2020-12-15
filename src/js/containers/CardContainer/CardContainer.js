@@ -5,11 +5,10 @@ import Card from '../../components/Card/Card';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 import './CardContainer.scss';
 
-const CardContainer = ({ onClick, status, data }) => {
-    let content;
-    switch (status) {
-        case 'loading':
-            content = (
+const CardContainer = ({ onClick, data, loading, error }) => {
+    return (
+        <div className="card-container">
+            {loading ? (
                 <ReactLoading
                     type="spin"
                     className="loading"
@@ -17,30 +16,24 @@ const CardContainer = ({ onClick, status, data }) => {
                     height={200}
                     width={200}
                 />
-            );
-            break;
-        case 'error':
-            content = <ErrorMessage />;
-            break;
-        case 'success':
-            {
-                content =
-                    data !== undefined &&
-                    data.articles.map((value, key) => {
-                        return <Card key={key} {...value} onClick={onClick} />;
-                    });
-            }
-            break;
-        default:
-            return <div>Nothing is loaded</div>;
-    }
-    return <div className="card-container">{content}</div>;
+            ) : error ? (
+                <ErrorMessage />
+            ) : (
+                data !== undefined &&
+                data.articles.map((value, key) => {
+                    return <Card key={key} {...value} onClick={onClick} />;
+                })
+            )}
+        </div>
+    );
 };
 
 CardContainer.propTypes = {
-    country: PropTypes.string,
-    status: PropTypes.string,
+    loading: PropTypes.bool,
+    error: PropTypes.bool,
     data: PropTypes.object,
     onClick: PropTypes.func,
+    country: PropTypes.string,
+    status: PropTypes.string,
 };
 export default CardContainer;

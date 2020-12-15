@@ -1,12 +1,12 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import CardContainer from './CardContainer/CardContainer';
 import SearchContainer from './SearchContainer/SearchContainer';
 import ArticleContainer from './ArticleContainer/ArticleContainer';
+import CategoryContainer from './CategoryContainer/CategoryContainer';
 import CategoriesContainer from './CategoriesContainer/CategoriesContainer';
 import './Container.scss';
-import CategoryContainer from './CategoryContainer/CategoryContainer';
-import getTopNews from '../queries/getTopNews';
 
 const Container = ({
     country,
@@ -17,14 +17,17 @@ const Container = ({
     setActiveCategory,
 }) => {
     let content;
-    const { status, data } = getTopNews(country);
+
+    const fetchedTopHeadlines = useSelector((state) => state.topHeadlines);
+    const { loading, error, data } = fetchedTopHeadlines;
 
     switch (container) {
         case 'Top News':
             content = (
                 <CardContainer
+                    loading={loading}
+                    error={error}
                     data={data}
-                    status={status}
                     country={country}
                     onClick={setActiveArticle}
                 />
@@ -70,8 +73,8 @@ Container.propTypes = {
     isArticle: PropTypes.bool,
     category: PropTypes.string,
     container: PropTypes.string,
+    // topHeadlines: PropTypes.object,
     setActiveArticle: PropTypes.func,
     setActiveCategory: PropTypes.func,
 };
-
 export default Container;

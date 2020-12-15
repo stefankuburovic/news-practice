@@ -5,7 +5,6 @@ const getSearch = async (_, country, keyword) => {
     const { data } = await axios.get(
         `${process.env.REACT_APP_APP_URI}/top-headlines?country=${country}&q=${keyword}&apiKey=${process.env.REACT_APP_APP_TOKEN}`,
     );
-
     return data;
 };
 

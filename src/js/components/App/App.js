@@ -2,19 +2,24 @@ import React, { useState } from 'react';
 import Container from '../../containers/Container';
 import HeaderContainer from '../../containers/HeaderContainer/HeaderContainer';
 import './App.scss';
+import { getTopHeadlines } from '../../store/actions/topHeadlinesActions';
+import { useDispatch } from 'react-redux';
 
 function App() {
     const [menuItem, setMenuItem] = useState('Top News');
+    const dispatch = useDispatch();
 
     const [category, setActiveCategory] = useState('');
     const [country, setCountry] = useState('GB');
     const [article, getArticle] = useState({});
 
+    dispatch(getTopHeadlines(country));
     const setActive = (menuItem) => {
         return setMenuItem(menuItem);
     };
 
     const setActiveCountry = (country) => {
+        dispatch(getTopHeadlines(country));
         return setCountry(country);
     };
 

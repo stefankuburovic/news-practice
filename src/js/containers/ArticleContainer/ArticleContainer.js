@@ -8,7 +8,7 @@ import { BsDot, IoMdArrowRoundBack, IoMdArrowRoundForward } from 'react-icons/al
 
 const ArticleContainer = ({ onClick, country, article }) => {
     const { data } = getSearch(country, article.title);
-    console.log(article.title, data);
+
     let { title, content, urlToImage, author, url } =
         (data !== undefined && data.articles.length > 0 && data.articles[0]) || '';
 

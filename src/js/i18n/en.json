@@ -1,0 +1,10 @@
+{
+  "menu.topNews": "Top News",
+  "menu.categories": "Categories",
+  "menu.search": "Search",
+
+  "languageMenu.english": "English",
+  "languageMenu.german": "German",
+
+  "error.message": "News can't be loaded at the moment, please try again later"
+}

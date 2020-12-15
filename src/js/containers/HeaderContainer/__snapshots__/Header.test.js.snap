@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderContainer should render the HeaderContainer Component correctly 1`] = `
+<div
+  className="header-container"
+>
+  <Menu
+    items={
+      Array [
+        "Top News",
+        "Categories",
+        "Search",
+      ]
+    }
+    position="left"
+  />
+  <Menu
+    items={
+      Array [
+        "GB",
+        "US",
+      ]
+    }
+    position="right"
+  />
+</div>
+`;

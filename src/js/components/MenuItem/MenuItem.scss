@@ -1,0 +1,32 @@
+.menu-item {
+  border: 0;
+  height: 100%;
+  outline: none;
+  cursor: pointer;
+  padding: 0 15px;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  color: var(--white);
+  line-height: var(--line-height);
+  font-size: var(--menuItemFontSize);
+  background: var(--transparent-white);
+
+  &:hover, &.active {
+    background: linear-gradient(0deg, var(--transparent-white) 0%, var(--transparent-black-30) 100%);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+
+    &:hover {
+      background: var(--transparent-white);
+    }
+
+    &.active {
+      background: linear-gradient(0deg, var(--transparent-white) 0%, var(--transparent-black-30) 100%);
+    }
+
+  }
+
+}

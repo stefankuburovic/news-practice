@@ -1,0 +1,12 @@
+.menu-container {
+  display: flex;
+  flex-direction: row;
+
+  &.right {
+    margin-left: auto;
+  }
+
+  &.left {
+    margin-right: auto;
+  }
+}

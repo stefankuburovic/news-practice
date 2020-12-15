@@ -1,0 +1,10 @@
+{
+  "menu.topNews": "Top-Nachrichten",
+  "menu.categories": "Kategorien",
+  "menu.search": "Suche",
+
+  "languageMenu.english": "Englisch",
+  "languageMenu.german": "Deutsch",
+
+  "error.message": "Nachrichten können im Moment nicht geladen werden, bitte versuchen Sie es später noch einmal"
+}

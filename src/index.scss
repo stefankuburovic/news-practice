@@ -1,0 +1,16 @@
+@import "scss/normalize";
+@import "scss/constants";
+
+body {
+  background: var(--white);
+  font-family: Helvetica,Arial,freesans,sans-serif;
+}
+
+.loading {
+  margin: 0 auto;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}

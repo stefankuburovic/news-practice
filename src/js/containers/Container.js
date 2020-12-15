@@ -9,10 +9,10 @@ import CategoryContainer from './CategoryContainer/CategoryContainer';
 import getTopNews from '../queries/getTopNews';
 
 const Container = ({
-    container,
+    country,
     article,
     category,
-    country,
+    container,
     setActiveArticle,
     setActiveCategory,
 }) => {
@@ -23,19 +23,19 @@ const Container = ({
         case 'Top News':
             content = (
                 <CardContainer
-                    onClick={setActiveArticle}
-                    country={country}
-                    status={status}
                     data={data}
+                    status={status}
+                    country={country}
+                    onClick={setActiveArticle}
                 />
             );
             break;
         case 'Categories':
             content = (
                 <CategoriesContainer
-                    onClick={setActiveArticle}
                     country={country}
                     category={category}
+                    onClick={setActiveArticle}
                     setActiveCategory={setActiveCategory}
                 />
             );
@@ -48,13 +48,13 @@ const Container = ({
     }
     return (
         <div className="container">
-            {article.length > 0 ? (
-                <ArticleContainer onClick={setActiveArticle} />
+            {Object.keys(article).length > 0 ? (
+                <ArticleContainer onClick={setActiveArticle} country={country} article={article} />
             ) : category.length > 0 ? (
                 <CategoryContainer
                     country={country}
-                    onClick={setActiveArticle}
                     category={category}
+                    onClick={setActiveArticle}
                 />
             ) : (
                 content
@@ -64,10 +64,11 @@ const Container = ({
 };
 
 Container.propTypes = {
-    article: PropTypes.string,
-    category: PropTypes.string,
+    article: PropTypes.object,
     keyword: PropTypes.string,
     country: PropTypes.string,
+    isArticle: PropTypes.bool,
+    category: PropTypes.string,
     container: PropTypes.string,
     setActiveArticle: PropTypes.func,
     setActiveCategory: PropTypes.func,

@@ -1,15 +1,21 @@
 :root {
+  //Colors
+  --red: #bb1919;
   --black: #000000;
   --white: #ffffff;
-  --red: #bb1919;
   --link-color: #165879;
-  --transparent-white: rgba(255, 255, 255, 0);
   --transparent-black-30: rgba(0, 0, 0, .3);
+  --transparent-white: rgba(255, 255, 255, 0);
 
+  //Typography
   --line-height: 1.1;
-
+  --menuItemFontSize: 16px;
   --pageHeadlineFontSize: 48px;
   --newsHeadlineFontSize: 24px;
   --categoryNameFontSize: 18px;
-  --menuItemFontSize: 16px;
+
+  //Breakpoints
+  --mobile: 768px;
+  --tablet-portrait: 768px;
+  --small-desktop: 1366px;
 }

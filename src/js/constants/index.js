@@ -23,7 +23,10 @@ export const LANGUAGES = [
         values={{ text: 'German' }}
     />,
 ];
-export const COUNTRIES = ['GB', 'US'];
+export const COUNTRIES = [
+    <FormattedMessage id="countryMenu.GB" defaultMessage="{text}" values={{ text: 'GB' }} />,
+    <FormattedMessage id="countryMenu.US" defaultMessage="{text}" values={{ text: 'US' }} />,
+];
 export const CATEGORIES = [
     'business',
     'entertainment',

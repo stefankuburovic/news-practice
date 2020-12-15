@@ -2,7 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f0086be-af15-432a-aa17-254aacb41f74" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/App/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Card/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Card/Card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Card/Card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Card/Card.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Category/Category.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Category/Category.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/MenuItem/MenuItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/MenuItem/MenuItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/constants/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/constants/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/containers/ArticleContainer/ArticleContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/containers/ArticleContainer/ArticleContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/containers/ArticleContainer/ArticleContainer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/containers/ArticleContainer/ArticleContainer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/containers/CardContainer/CardContainer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/containers/CardContainer/CardContainer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/containers/Container.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/containers/Container.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/containers/SearchContainer/SearchContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/containers/SearchContainer/SearchContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/containers/SliderContainer/SliderContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/containers/SliderContainer/SliderContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/i18n/de.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/i18n/de.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/i18n/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/i18n/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/queries/getNewsByCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/queries/getNewsByCategory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/queries/getNewsBySearchTerm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/queries/getNewsBySearchTerm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/queries/getTopNews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/queries/getTopNews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/queries/getTopNewsByCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/queries/getTopNewsByCategory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/_constants.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/_constants.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +155,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="with-react-query" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

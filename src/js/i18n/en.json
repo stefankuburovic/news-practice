@@ -6,5 +6,11 @@
   "languageMenu.english": "English",
   "languageMenu.german": "German",
 
+  "countryMenu.GB": "GB",
+  "countryMenu.US": "US",
+
+  "article.backLink": "Back",
+  "article.fullArticle": "Full article",
+
   "error.message": "News can't be loaded at the moment, please try again later"
 }

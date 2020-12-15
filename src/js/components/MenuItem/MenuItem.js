@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 
 const MenuItem = ({ item, setActive, active, isArticle, setActiveArticle, setActiveCategory }) => {
     const activeContainer = () => {
-        setActive(item);
-        setActiveArticle('');
+        setActive(item.props.values.text);
+        setActiveArticle({});
         setActiveCategory !== undefined && setActiveCategory('');
     };
     const activeMenuItem =

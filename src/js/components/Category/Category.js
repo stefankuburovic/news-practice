@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './Category.scss';
 import SliderContainer from '../../containers/SliderContainer/SliderContainer';
+import getTopNewsByCategory from '../../queries/getTopNewsByCategory';
 
 const Category = ({ country, category, onClick, setActiveCategory, key }) => {
     const [isOpen, setOpen] = useState(false);
 
     const open = isOpen ? 'open' : 'closed';
-
+    let { data } = getTopNewsByCategory(country, category, 5);
     return (
         <div className="category-container">
             <h3
@@ -22,9 +23,10 @@ const Category = ({ country, category, onClick, setActiveCategory, key }) => {
             <div className={`category-container_description ${open}`}>
                 <SliderContainer
                     key={key}
+                    data={data}
                     country={country}
-                    category={category}
                     onClick={onClick}
+                    category={category}
                     setActiveCategory={setActiveCategory}
                 />
             </div>

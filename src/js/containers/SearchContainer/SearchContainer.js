@@ -5,14 +5,14 @@ import SearchBar from '../../components/SearchBar/SearchBar';
 import CardContainer from '../CardContainer/CardContainer';
 import getSearch from '../../queries/getNewsBySearchTerm';
 
-const SearchContainer = ({ country }) => {
+const SearchContainer = ({ country, onClick }) => {
     const [keyword, setKeyword] = useState('');
     const { status, data } = getSearch(country, keyword);
 
     return (
         <div className="search-container">
             <SearchBar setKeyword={setKeyword} />
-            {keyword.length > 3 && <CardContainer data={data} status={status} />}
+            {keyword.length > 3 && <CardContainer data={data} status={status} onClick={onClick} />}
         </div>
     );
 };

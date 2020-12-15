@@ -6,5 +6,11 @@
   "languageMenu.english": "Englisch",
   "languageMenu.german": "Deutsch",
 
+  "countryMenu.GB": "GB",
+  "countryMenu.US": "US",
+
+  "article.backLink": "Zurück",
+  "article.fullArticle": "Vollständiger Artikel",
+
   "error.message": "Nachrichten können im Moment nicht geladen werden, bitte versuchen Sie es später noch einmal"
 }

@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const getTopNews = async (_, country) => {
     const { data } = await axios.get(
-        `${process.env.REACT_APP_APP_URI}?country=${country}&apiKey=${process.env.REACT_APP_APP_TOKEN}`,
+        `${process.env.REACT_APP_APP_URI}/top-headlines?country=${country}&apiKey=${process.env.REACT_APP_APP_TOKEN}`,
     );
     return data;
 };

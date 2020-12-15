@@ -1,16 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { AiOutlineArrowRight } from 'react-icons/all';
 import './Card.scss';
 
-const Card = ({ title, description, urlToImage, onClick }) => {
+const Card = ({ title, urlToImage, onClick }) => {
+    console.log(title);
     return (
         <div className="card-item">
             <div className="card-item_description">
                 <h4>{title}</h4>
-                <p>{description}</p>
-                <button onClick={() => onClick('1')}>More</button>
+                <button onClick={() => onClick({ title })}>
+                    <AiOutlineArrowRight color="white" />
+                </button>
             </div>
-            <img src={urlToImage} alt={title} className="card-item_image" />
+            {urlToImage !== null && (
+                <img src={urlToImage} alt={title} className="card-item_image" />
+            )}
         </div>
     );
 };

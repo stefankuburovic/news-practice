@@ -8,7 +8,7 @@ function App() {
 
     const [category, setActiveCategory] = useState('');
     const [country, setCountry] = useState('GB');
-    const [article, getArticle] = useState('');
+    const [article, getArticle] = useState({});
 
     const setActive = (menuItem) => {
         return setMenuItem(menuItem);
@@ -21,23 +21,26 @@ function App() {
     const setActiveArticle = (article) => {
         return getArticle(article);
     };
+
     const activeMenuItem = menuItem.props !== undefined ? menuItem.props.values.text : menuItem;
+    const isArticle = Object.keys(article).length > 0;
     return (
         <div className="app">
             <h1>News</h1>
             <HeaderContainer
-                active={activeMenuItem}
                 country={country}
                 setActive={setActive}
+                isArticle={isArticle}
+                active={activeMenuItem}
                 setActiveArticle={setActiveArticle}
                 setActiveCountry={setActiveCountry}
                 setActiveCategory={setActiveCategory}
-                isArticle={article !== ''}
             />
             <Container
                 article={article}
-                category={category}
                 country={country}
+                category={category}
+                isArticle={isArticle}
                 container={activeMenuItem}
                 setActiveArticle={setActiveArticle}
                 setActiveCategory={setActiveCategory}

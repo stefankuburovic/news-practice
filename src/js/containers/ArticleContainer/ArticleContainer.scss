@@ -1,0 +1,56 @@
+.article-container {
+
+  &_title-section {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+  }
+  &_content {
+    p {
+      font-size: 18px;
+    }
+  }
+
+  &_footer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    a {
+      &:last-child {
+        margin-left: auto;
+      }
+    }
+
+  }
+
+  &_header-image {
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  a {
+    width: auto;
+    display: flex;
+    font-size: 20px;
+    color: var(--red);
+    font-weight: bold;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    transition: margin-left .3s;
+    span {
+      display: flex;
+      align-items: center;
+      transition: margin-left .3s;
+    }
+
+  }
+
+  &_title {
+    font-size: 28px;
+  }
+
+}

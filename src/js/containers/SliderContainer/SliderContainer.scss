@@ -4,11 +4,13 @@
   margin: 0 auto;
   .card-item {
     width: 80%;
+    margin: 0 5%;
     height: 200px;
     display: block;
     overflow: hidden;
     position: relative;
     padding: 40px 20px;
+
     img {
       transform: scale(1.5);
     }

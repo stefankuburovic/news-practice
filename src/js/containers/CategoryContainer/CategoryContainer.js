@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import getTopNewsByCategory from '../../queries/getTopNewsByCategory';
 import './CategoryContainer.scss';
 import CardContainer from '../CardContainer/CardContainer';
+import { useSelector } from 'react-redux';
 
-const CategoryContainer = ({ country, category, onClick }) => {
-    const { status, data } = getTopNewsByCategory(country, category);
+const CategoryContainer = ({ category, onClick }) => {
+    const fetchedTopHeadlinesByCategory = useSelector((state) => state.topHeadlinesByCategory);
+    const { loading, data } = fetchedTopHeadlinesByCategory;
     return (
         <div className="category-container">
             <h2>{category}</h2>
-            <CardContainer status={status} data={data} onClick={onClick} />
+            {!loading && <CardContainer status={status} data={data} onClick={onClick} />}
         </div>
     );
 };

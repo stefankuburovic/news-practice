@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { getHeadlinesBySearchTerm } from '../../store/actions/headlinesBySearchTermAction';
+import { getHeadlinesBySearchTerm } from '../../store/actions/topHeadlinesBySearchTermAction';
 import './SearchBar.scss';
 
 const SearchBar = ({ country, setKeyword }) => {

@@ -11,18 +11,19 @@ import './Container.scss';
 const Container = ({
     country,
     article,
+    keyword,
     category,
     container,
+    setKeyword,
     setActiveArticle,
     setActiveCategory,
 }) => {
     let content;
 
     const fetchedTopHeadlines = useSelector((state) => state.topHeadlines);
-    const { loading, error, data } = fetchedTopHeadlines;
-
     switch (container) {
         case 'Top News':
+            const { loading, error, data } = fetchedTopHeadlines;
             content = (
                 <CardContainer
                     loading={loading}
@@ -44,7 +45,14 @@ const Container = ({
             );
             break;
         case 'Search':
-            content = <SearchContainer country={country} onClick={setActiveArticle} />;
+            content = (
+                <SearchContainer
+                    country={country}
+                    onClick={setActiveArticle}
+                    keyword={keyword}
+                    setKeyword={setKeyword}
+                />
+            );
             break;
         default:
             content = <CardContainer country={country} onClick={setActiveArticle} />;
@@ -68,12 +76,12 @@ const Container = ({
 
 Container.propTypes = {
     article: PropTypes.object,
-    keyword: PropTypes.string,
     country: PropTypes.string,
     isArticle: PropTypes.bool,
+    keyword: PropTypes.string,
     category: PropTypes.string,
+    setKeyword: PropTypes.func,
     container: PropTypes.string,
-    // topHeadlines: PropTypes.object,
     setActiveArticle: PropTypes.func,
     setActiveCategory: PropTypes.func,
 };

@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import Container from '../../containers/Container';
 import HeaderContainer from '../../containers/HeaderContainer/HeaderContainer';
 import './App.scss';
-import { getTopHeadlines } from '../../store/actions/topHeadlinesActions';
+import { getTopHeadlines } from '../../store/actions/topHeadlinesAction';
 import { useDispatch } from 'react-redux';
+import { getHeadlinesBySearchTerm } from '../../store/actions/topHeadlinesBySearchTermAction';
+import { getTopHeadlinesByCategory } from '../../store/actions/topHeadlinesByCategoryAction';
 
 function App() {
     const [menuItem, setMenuItem] = useState('Top News');
@@ -12,6 +14,7 @@ function App() {
     const [category, setActiveCategory] = useState('');
     const [country, setCountry] = useState('GB');
     const [article, getArticle] = useState({});
+    const [keyword, setKeyword] = useState('');
 
     dispatch(getTopHeadlines(country));
     const setActive = (menuItem) => {
@@ -19,7 +22,9 @@ function App() {
     };
 
     const setActiveCountry = (country) => {
-        dispatch(getTopHeadlines(country));
+        menuItem === 'Top News' && dispatch(getTopHeadlines(country));
+        menuItem === 'Search' && dispatch(getHeadlinesBySearchTerm(country, keyword));
+        menuItem === 'Categories' && dispatch(getTopHeadlinesByCategory(country, category));
         return setCountry(country);
     };
 
@@ -44,9 +49,11 @@ function App() {
             <Container
                 article={article}
                 country={country}
+                keyword={keyword}
                 category={category}
                 isArticle={isArticle}
                 container={activeMenuItem}
+                setKeyword={setKeyword}
                 setActiveArticle={setActiveArticle}
                 setActiveCategory={setActiveCategory}
             />

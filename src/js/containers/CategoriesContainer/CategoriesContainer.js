@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Category from '../../components/Category/Category';
+
 import { CATEGORIES } from '../../constants';
+import Category from '../../components/Category/Category';
 import './CategoriesContainer.scss';
 
 const CategoriesContainer = ({ country, onClick, setActiveCategory }) => {
@@ -10,13 +11,14 @@ const CategoriesContainer = ({ country, onClick, setActiveCategory }) => {
             <div className="categories-container_accordion">
                 {CATEGORIES.map((category, key) => {
                     return (
-                        <Category
-                            key={key}
-                            country={country}
-                            onClick={onClick}
-                            category={category}
-                            setActiveCategory={setActiveCategory}
-                        />
+                        <div className="single-category" key={category}>
+                            <Category
+                                country={country}
+                                onClick={onClick}
+                                category={category}
+                                setActiveCategory={setActiveCategory}
+                            />
+                        </div>
                     );
                 })}
             </div>

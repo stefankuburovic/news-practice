@@ -4,11 +4,10 @@ import HeaderContainer from '../../containers/HeaderContainer/HeaderContainer';
 import './App.scss';
 
 function App() {
-    const [menuItem, setMenuItem] = useState('Top News');
-
-    const [category, setActiveCategory] = useState('');
-    const [country, setCountry] = useState('GB');
     const [article, getArticle] = useState({});
+    const [country, setCountry] = useState('GB');
+    const [category, setActiveCategory] = useState('');
+    const [menuItem, setMenuItem] = useState('Top News');
 
     const setActive = (menuItem) => {
         return setMenuItem(menuItem);

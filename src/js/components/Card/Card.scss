@@ -1,3 +1,5 @@
+@import "../../../scss/media_breakpoints";
+
 .card-item {
   margin: 0;
   display: flex;
@@ -29,6 +31,12 @@
       font-size: 30px;
       color: var(--white);
       text-align: center;
+      @include media-breakpoint-down(lg) {
+        font-size: 18px;
+      }
+      @include media-breakpoint-down(xs) {
+        font-size: 14px;
+      }
     }
 
     p {

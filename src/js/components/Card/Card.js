@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { AiOutlineArrowRight } from 'react-icons/all';
+
 import dummyImage from '../../../assets/images/jpg/news.jpg';
 import './Card.scss';
 

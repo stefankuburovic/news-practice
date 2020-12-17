@@ -29,7 +29,7 @@ const MenuItem = ({ item, setActive, active, isArticle, setActiveArticle, setAct
 };
 
 MenuItem.propTypes = {
-    item: PropTypes.string,
+    item: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     active: PropTypes.string,
     setActive: PropTypes.func,
     isArticle: PropTypes.bool,

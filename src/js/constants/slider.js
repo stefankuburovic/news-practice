@@ -9,4 +9,27 @@ export const SLIDER_SETTINGS = {
     slidesToScroll: 3,
     nextArrow: <BiRightArrow color="black" />,
     prevArrow: <BiLeftArrow color="black" />,
+    responsive: [
+        {
+            breakpoint: 1280,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+            },
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            },
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            },
+        },
+    ],
 };

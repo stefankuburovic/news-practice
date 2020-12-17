@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
+import getTopNews from '../queries/getTopNews';
 import CardContainer from './CardContainer/CardContainer';
 import SearchContainer from './SearchContainer/SearchContainer';
 import ArticleContainer from './ArticleContainer/ArticleContainer';
+import CategoryContainer from './CategoryContainer/CategoryContainer';
 import CategoriesContainer from './CategoriesContainer/CategoriesContainer';
 import './Container.scss';
-import CategoryContainer from './CategoryContainer/CategoryContainer';
-import getTopNews from '../queries/getTopNews';
 
 const Container = ({
     country,

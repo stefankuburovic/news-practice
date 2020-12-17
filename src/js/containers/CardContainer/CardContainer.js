@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactLoading from 'react-loading';
+
 import Card from '../../components/Card/Card';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 import './CardContainer.scss';

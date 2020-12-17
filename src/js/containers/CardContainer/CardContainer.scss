@@ -1,3 +1,5 @@
+@import "../../../scss/media_breakpoints";
+
 .card-container {
   display: grid;
   gap: 60px;
@@ -5,13 +7,12 @@
   height: 100%;
   grid-template-columns: repeat(3, 1fr);
   
-  @media (max-width: 1366px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(1, 1fr);
-  }
+@include media-breakpoint-down(lg){
+  grid-template-columns: repeat(2, 1fr);
+}
+@include media-breakpoint-down(sm){
+  grid-template-columns: repeat(1, 1fr);
+}
   img {
     width: 100%;
     height: auto;

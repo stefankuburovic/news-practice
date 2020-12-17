@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
-import { IntlContext } from '../../hoc/IntlContext';
+
 import { LANGUAGES } from '../../constants';
+import { IntlContext } from '../../hoc/IntlContext';
 import './LanguageSwitcher.scss';
 
 const LanguageSwitch = () => {

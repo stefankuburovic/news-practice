@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
+import CardContainer from '../CardContainer/CardContainer';
 import getTopNewsByCategory from '../../queries/getTopNewsByCategory';
 import './CategoryContainer.scss';
-import CardContainer from '../CardContainer/CardContainer';
 
 const CategoryContainer = ({ country, category, onClick }) => {
     const { status, data } = getTopNewsByCategory(country, category);

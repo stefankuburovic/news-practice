@@ -1,7 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-
 import './ErrorMessage.scss';
 
 const ErrorMessage = () => {

@@ -1,0 +1,50 @@
+$breakpoints: (
+        xxs: 480,
+        xs: 640,
+        sm: 768,
+        md: 1024,
+        lg: 1280,
+        xl: 1440,
+        xxl: 1920,
+) !default;
+
+@mixin media-breakpoint-up($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media screen and (min-width: #{map-get($breakpoints, $breakpoint)}px) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint #{$breakpoint} is not defained.";
+  }
+}
+
+@mixin media-breakpoint-down($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media screen and (max-width: map-get($breakpoints, $breakpoint) - 1px) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint #{$breakpoint} is not defained.";
+  }
+}
+
+@mixin media-breakpoint-between($lower, $upper) {
+  $min: map-get($breakpoints, $lower);
+  $max: map-get($breakpoints, $upper);
+
+  @if $min != null and $max != null {
+    @media screen and (min-width: #{$min}px) and (max-width: $max - 1px) {
+      @content;
+    }
+  } @else if $max == null {
+    @include media-breakpoint-down($lower) {
+      @content;
+    }
+  } @else if $min == null {
+    @include media-breakpoint-up($upper) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoints #{$lower} and #{$upper} are not defined";
+  }
+}

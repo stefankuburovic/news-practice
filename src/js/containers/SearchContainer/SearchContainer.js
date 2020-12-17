@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import './SearchContainer.scss';
+
 import SearchBar from '../../components/SearchBar/SearchBar';
 import CardContainer from '../CardContainer/CardContainer';
 import getSearch from '../../queries/getNewsBySearchTerm';
+import './SearchContainer.scss';
 
 const SearchContainer = ({ country, onClick }) => {
     const [keyword, setKeyword] = useState('');

@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './ArticleContainer.scss';
 import { FormattedMessage } from 'react-intl';
+
 import getSearch from '../../queries/getNewsBySearchTerm';
 import dummyImage from '../../../assets/images/jpg/news.jpg';
 import { BsDot, IoMdArrowRoundBack, IoMdArrowRoundForward } from 'react-icons/all';
+import './ArticleContainer.scss';
 
 const ArticleContainer = ({ onClick, country, article }) => {
     const { data } = getSearch(country, article.title);
-    console.log(article.title, data);
+
     let { title, content, urlToImage, author, url } =
         (data !== undefined && data.articles.length > 0 && data.articles[0]) || '';
 

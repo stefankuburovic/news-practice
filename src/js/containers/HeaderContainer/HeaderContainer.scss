@@ -1,3 +1,5 @@
+@import '../../../scss/media_breakpoints';
+
 .header {
   &-container {
     display: flex;
@@ -5,5 +7,9 @@
     width: 100%;
     height: 50px;
     background: var(--red);
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+      height: 100px;
+    }
   }
 }

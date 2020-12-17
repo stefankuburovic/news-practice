@@ -1,12 +1,30 @@
+@import '../../../scss/media_breakpoints';
+
 .menu-container {
   display: flex;
   flex-direction: row;
 
   &.right {
     margin-left: auto;
+    @include media-breakpoint-down(md) {
+      right: 0;
+      top: 50%;
+      height: 50px;
+      position: absolute;
+    }
   }
 
   &.left {
     margin-right: auto;
+    @include media-breakpoint-down(md) {
+      left: 0;
+      top: 0;
+      height: 50px;
+      width: 100%;
+      position: absolute;
+      .menu-item {
+        width: 33.33%;
+      }
+    }
   }
 }

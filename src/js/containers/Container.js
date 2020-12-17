@@ -8,6 +8,7 @@ import ArticleContainer from './ArticleContainer/ArticleContainer';
 import CategoryContainer from './CategoryContainer/CategoryContainer';
 import CategoriesContainer from './CategoriesContainer/CategoriesContainer';
 import './Container.scss';
+import { FormattedMessage } from 'react-intl';
 
 const Container = ({
     country,
@@ -56,6 +57,13 @@ const Container = ({
                     country={country}
                     category={category}
                     onClick={setActiveArticle}
+                    categoryTitle={
+                        <FormattedMessage
+                            id={`category.${category}`}
+                            defaultMessage={`{text}`}
+                            values={{ text: category }}
+                        />
+                    }
                 />
             ) : (
                 content

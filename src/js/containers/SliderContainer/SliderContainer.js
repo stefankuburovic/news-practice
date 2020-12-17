@@ -7,11 +7,19 @@ import { SLIDER_SETTINGS } from '../../constants/slider';
 import './SliderContainer.scss';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { FormattedMessage } from 'react-intl';
 
-const SliderContainer = ({ category, onClick, setActiveCategory, data }) => {
+const SliderContainer = ({ category, onClick, categoryTitle, setActiveCategory, data }) => {
     return (
         <div className="slider-container">
-            <h2 onClick={() => setActiveCategory(category)}>More of {category}</h2>
+            <h2 onClick={() => setActiveCategory(category)}>
+                <FormattedMessage
+                    id={`category.moreOf`}
+                    defaultMessage={`{text}`}
+                    values={{ text: category }}
+                />{' '}
+                {categoryTitle}
+            </h2>
             <Slider {...SLIDER_SETTINGS}>
                 {data !== undefined &&
                     data.articles.map((value, key) => {
@@ -34,6 +42,7 @@ SliderContainer.propTypes = {
     onClick: PropTypes.func,
     country: PropTypes.string,
     category: PropTypes.string,
+    categoryTitle: PropTypes.object,
     setActiveCategory: PropTypes.func,
 };
 

@@ -1,7 +1,17 @@
+@import '../../../scss/media_breakpoints';
+
 .language-switcher {
-  position: absolute;
-  transform: translateX(-50%);
   top: 0;
   left: 50%;
   height: 100%;
+  position: absolute;
+  transform: translateX(-50%);
+
+  @include media-breakpoint-down(md) {
+    left: 0;
+    top: 50%;
+    height: 50px;
+    transform: translateX(0);
+  }
+
 }

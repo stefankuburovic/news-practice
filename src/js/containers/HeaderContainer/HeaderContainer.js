@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './HeaderContainer.scss';
 import Menu from '../../components/Menu/Menu';
 import { MENU_ITEMS, COUNTRIES } from '../../constants';
 import LanguageSwitch from '../../components/LanguageSwitcher/LanguageSwitcher';
+import './HeaderContainer.scss';
 
 const HeaderContainer = ({
     active,

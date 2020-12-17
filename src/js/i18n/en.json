@@ -3,11 +3,21 @@
   "menu.categories": "Categories",
   "menu.search": "Search",
 
-  "languageMenu.english": "English",
-  "languageMenu.german": "German",
+  "languageMenu.english": "EN",
+  "languageMenu.german": "DE",
 
-  "countryMenu.GB": "GB",
-  "countryMenu.US": "US",
+  "countryMenu.GB": "NEWS:GB",
+  "countryMenu.US": "NEWS:US",
+
+  "category.business": "business",
+  "category.entertainment": "entertainment",
+  "category.general": "general",
+  "category.health": "health",
+  "category.science": "science",
+  "category.sports": "sports",
+  "category.technology": "technology",
+
+  "category.moreOf": "More of",
 
   "article.backLink": "Back",
   "article.fullArticle": "Full article",
